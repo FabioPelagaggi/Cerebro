@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Mutant {
+public class MutantModel {
 
     @Id
     @SequenceGenerator(name = "mutant_id_sequence", sequenceName = "mutant_id_sequence")

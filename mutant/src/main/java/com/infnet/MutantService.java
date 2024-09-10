@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public record MutantService(MutantRepository mutantRepository) {
     public void registerMutant(MutantRegistrationRequest request) {
-        Mutant mutant = Mutant.builder()
+        MutantModel mutant = MutantModel.builder()
                 .name(request.name())
                 .realName(request.realName())
                 .level(request.level())

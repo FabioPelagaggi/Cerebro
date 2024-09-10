@@ -18,6 +18,7 @@
 	
 	<modules>
 		<module>mutant</module>
+		<module>human</module>
 	</modules>
 
 	<name>cerebro</name>

@@ -35,7 +35,7 @@ public class MutantServiceTest {
 
         // Assert
         verify(mutantRepository, times(1)).save(
-                Mutant.builder()
+                MutantModel.builder()
                         .name(request.name())
                         .realName(request.realName())
                         .level(request.level())

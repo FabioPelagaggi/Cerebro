@@ -9,7 +9,7 @@ public class MutantTest {
     @Test
     public void testMutantConstructorAndGetters() {
         String[] powers = {"Regeneration", "Claws"};
-        Mutant mutant = Mutant.builder()
+        MutantModel mutant = MutantModel.builder()
                 .id(1L)
                 .name("Wolverine")
                 .realName("Logan")
@@ -30,7 +30,7 @@ public class MutantTest {
 
     @Test
     public void testMutantSetters() {
-        Mutant mutant = new Mutant();
+        MutantModel mutant = new MutantModel();
         String[] powers = {"Magnetism"};
 
         mutant.setId(2L);

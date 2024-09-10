@@ -22,11 +22,11 @@ public class MutantRepositoryTest {
     @Autowired
     private MutantRepository mutantRepository;
 
-    private Mutant mutant;
+    private MutantModel mutant;
 
     @BeforeEach
     public void setUp() {
-        mutant = Mutant.builder()
+        mutant = MutantModel.builder()
                 .name("Wolverine")
                 .realName("Logan")
                 .level("Omega")
@@ -39,20 +39,20 @@ public class MutantRepositoryTest {
 
     @Test
     public void testFindById() {
-        Optional<Mutant> foundMutant = mutantRepository.findById(mutant.getId());
+        Optional<MutantModel> foundMutant = mutantRepository.findById(mutant.getId());
         assertTrue(foundMutant.isPresent());
         assertEquals(mutant.getName(), foundMutant.get().getName());
     }
 
     @Test
     public void testFindAll() {
-        List<Mutant> mutants = mutantRepository.findAll();
+        List<MutantModel> mutants = mutantRepository.findAll();
         assertFalse(mutants.isEmpty());
     }
 
     @Test
     public void testSave() {
-        Mutant newMutant = Mutant.builder()
+        MutantModel newMutant = MutantModel.builder()
                 .name("Magneto")
                 .realName("Erik Lehnsherr")
                 .level("Alpha")
@@ -60,7 +60,7 @@ public class MutantRepositoryTest {
                 .description("A mutant with the ability to generate and control magnetic fields.")
                 .image("magneto.png")
                 .build();
-        Mutant savedMutant = mutantRepository.save(newMutant);
+        MutantModel savedMutant = mutantRepository.save(newMutant);
         assertNotNull(savedMutant.getId());
         assertEquals("Magneto", savedMutant.getName());
     }
@@ -68,7 +68,7 @@ public class MutantRepositoryTest {
     @Test
     public void testDelete() {
         mutantRepository.delete(mutant);
-        Optional<Mutant> deletedMutant = mutantRepository.findById(mutant.getId());
+        Optional<MutantModel> deletedMutant = mutantRepository.findById(mutant.getId());
         assertFalse(deletedMutant.isPresent());
     }
 }
