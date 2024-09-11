@@ -20,6 +20,7 @@
 		<module>mutant</module>
 		<module>human</module>
 		<module>history</module>
+		<module>xgene</module>
 	</modules>
 
 	<name>cerebro</name>

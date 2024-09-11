@@ -29,6 +29,21 @@ services:
       - postgres
     restart: unless-stopped
 
+  postgres-xgene:
+    container_name: Xgene
+    image: postgres
+    environment:
+      POSTGRES_USER: cerebro
+      POSTGRES_PASSWORD: cerebro
+      POSTGRES_DB: xgene_db
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5436:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
 networks:
   postgres:
     driver: bridge
