@@ -2,8 +2,13 @@ package com.infnet;
 
 import org.springframework.stereotype.Service;
 
+import lombok.AllArgsConstructor;
+
 @Service
-public record MutantService(MutantRepository mutantRepository) {
+@AllArgsConstructor
+public class MutantService {
+    private final MutantRepository mutantRepository;
+
     public void registerMutant(MutantRegistrationRequest request) {
         MutantModel mutant = MutantModel.builder()
                 .name(request.name())

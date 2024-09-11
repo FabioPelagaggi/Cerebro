@@ -7,5 +7,4 @@ public record MutantRegistrationRequest(
         String[] mutantPowers,
         String description,
         String image
-) {
-}
+) {}

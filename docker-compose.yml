@@ -1,6 +1,6 @@
 services:
   postgres-mutants:
-    container_name: MUTANTS
+    container_name: Mutants
     image: postgres
     environment:
       POSTGRES_USER: cerebro
@@ -14,17 +14,17 @@ services:
       - postgres
     restart: unless-stopped
 
-  postgres-humans:
-    container_name: HUMANS
+  postgres-history:
+    container_name: History
     image: postgres
     environment:
       POSTGRES_USER: cerebro
       POSTGRES_PASSWORD: cerebro
-      POSTGRES_DB: humans_db
+      POSTGRES_DB: history_db
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5433:5432"
+      - "5434:5432"
     networks:
       - postgres
     restart: unless-stopped

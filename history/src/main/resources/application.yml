@@ -3,11 +3,11 @@ server:
 
 spring:
   application:
-    name: human
+    name: history
   datasource:
     username: cerebro
     password: cerebro
-    url: jdbc:postgresql://localhost:5432/humans_db
+    url: jdbc:postgresql://localhost:5434/history_db
   jpa:
     hibernate:
       ddl-auto: update
