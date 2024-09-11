@@ -25,7 +25,4 @@ public class XgeneCheckHistory {
     private long mutantId;
     private boolean xgene;
     private LocalDateTime checkedAt;
-
 }
-
-   
