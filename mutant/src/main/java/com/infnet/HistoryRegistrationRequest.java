@@ -1,10 +1,10 @@
 package com.infnet;
 
-import java.time.LocalDateTime;
+import lombok.Builder;
 
+@Builder
 public record HistoryRegistrationRequest(
         Long mutantId,
         String name,
-        String registerType,
-        LocalDateTime createdAt
+        String registerType
 ) {}
