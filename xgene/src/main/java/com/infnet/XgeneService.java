@@ -1,6 +1,7 @@
 package com.infnet;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,10 @@ public class XgeneService {
         boolean isMutant = checkGene(mutantId);
         registerCheck(mutantId, isMutant);
         return isMutant;
+    }
+
+    public List<XgeneCheckHistory> getAllSubjects() {
+        return xgeneRepository.findAll();
     }
 
     public boolean checkGene(Long mutantId) {

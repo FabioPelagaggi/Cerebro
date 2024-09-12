@@ -1,13 +1,15 @@
 package com.infnet;
 
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @AllArgsConstructor
 @RestController
@@ -24,6 +26,12 @@ public class XgeneController {
         log.info("Subject with ID {} is {}", mutantId, isMutant ? "mutant" : "not mutant");
         
         return new XgeneCheckResponse(isMutant);
+    }
+
+    @GetMapping("all")
+    public List<XgeneCheckHistory> getAllSubjects() {
+        log.info("Getting all subjects");
+        return xgeneService.getAllSubjects();
     }
 
 }

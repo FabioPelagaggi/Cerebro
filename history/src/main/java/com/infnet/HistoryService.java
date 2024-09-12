@@ -1,6 +1,7 @@
 package com.infnet;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,9 @@ public record HistoryService(HistoryRepository historyRepository) {
                 .build();
         
         historyRepository.save(history);
+    }
+
+    public List<HistoryModel> getAllHistories() {
+        return historyRepository.findAll();
     }
 }
