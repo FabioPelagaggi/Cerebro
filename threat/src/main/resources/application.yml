@@ -1,0 +1,13 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: threat
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    fetchRegistry: true
+    registerWithEureka: true

@@ -22,6 +22,7 @@
 		<module>xgene</module>
 		<module>eureka-server</module>
 		<module>gateway</module>
+		<module>threat</module>
 	</modules>
 
 	<name>cerebro</name>
