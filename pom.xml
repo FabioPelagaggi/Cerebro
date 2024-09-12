@@ -21,6 +21,7 @@
 		<module>history</module>
 		<module>xgene</module>
 		<module>eureka-server</module>
+		<module>gateway</module>
 	</modules>
 
 	<name>cerebro</name>
