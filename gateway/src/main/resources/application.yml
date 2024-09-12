@@ -23,3 +23,9 @@ spring:
             - Path=/histories/**
           filters:
             - PrefixPath=/api
+        - id: threat
+          uri: http://localhost:8088
+          predicates:
+            - Path=/threats/**
+          filters:
+            - PrefixPath=/api
