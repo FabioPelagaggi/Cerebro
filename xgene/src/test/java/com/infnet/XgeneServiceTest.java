@@ -12,6 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.infnet.model.XgeneCheckHistory;
+import com.infnet.repository.XgeneRepository;
+import com.infnet.service.XgeneService;
+
 public class XgeneServiceTest {
 
     @Mock

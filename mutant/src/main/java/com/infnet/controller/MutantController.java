@@ -1,4 +1,4 @@
-package com.infnet;
+package com.infnet.controller;
 
 import java.util.List;
 
@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.infnet.model.MutantModel;
+import com.infnet.model.MutantRegistrationRequest;
+import com.infnet.service.MutantService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.infnet;
+package com.infnet.model;
 
 import java.time.LocalDateTime;
 
@@ -17,12 +17,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class XgeneCheckHistory {
+public class HistoryModel {
+
     @Id
-    @SequenceGenerator(name = "xgene_id_sequence", sequenceName = "xgene_id_sequence")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "xgene_id_sequence")
+    @SequenceGenerator(name = "history_id_sequence", sequenceName = "history_id_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_id_sequence")
     private Long id;
-    private long mutantId;
-    private boolean xgene;
-    private LocalDateTime checkedAt;
+    private Long mutantId;
+    private String name;
+    private String registerType;
+    private LocalDateTime createdAt;
+
 }

@@ -9,6 +9,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.infnet.model.MutantModel;
+import com.infnet.model.MutantRegistrationRequest;
+import com.infnet.repository.MutantRepository;
+import com.infnet.service.MutantService;
+
 public class MutantServiceTest {
 
     @Mock

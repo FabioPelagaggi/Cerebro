@@ -1,9 +1,13 @@
-package com.infnet;
+package com.infnet.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.infnet.model.HistoryModel;
+import com.infnet.model.HistoryRegistrationRequest;
+import com.infnet.repository.HistoryRepository;
 
 @Service
 public record HistoryService(HistoryRepository historyRepository) {

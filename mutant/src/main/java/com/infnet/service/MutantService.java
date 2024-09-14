@@ -1,9 +1,15 @@
-package com.infnet;
+package com.infnet.service;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.infnet.model.HistoryRegistrationRequest;
+import com.infnet.model.MutantModel;
+import com.infnet.model.MutantRegistrationRequest;
+import com.infnet.model.XgeneCheckResponse;
+import com.infnet.repository.MutantRepository;
 
 import lombok.AllArgsConstructor;
 

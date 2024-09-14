@@ -1,4 +1,4 @@
-package com.infnet;
+package com.infnet.controller;
 
 import java.util.List;
 
@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.infnet.model.HistoryModel;
+import com.infnet.model.HistoryRegistrationRequest;
+import com.infnet.service.HistoryService;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package com.infnet;
+package com.infnet.model;
 
 public record HistoryRegistrationRequest(
         Long mutantId,

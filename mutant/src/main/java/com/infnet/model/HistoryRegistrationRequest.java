@@ -1,4 +1,4 @@
-package com.infnet;
+package com.infnet.model;
 
 import lombok.Builder;
 

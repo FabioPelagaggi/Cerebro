@@ -9,6 +9,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.infnet.controller.XgeneController;
+import com.infnet.model.XgeneCheckResponse;
+import com.infnet.service.XgeneService;
+
 public class XgeneControllerTest {
 
     @Mock

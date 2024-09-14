@@ -1,6 +1,10 @@
 package com.infnet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.infnet.controller.HistoryController;
+import com.infnet.model.HistoryRegistrationRequest;
+import com.infnet.service.HistoryService;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

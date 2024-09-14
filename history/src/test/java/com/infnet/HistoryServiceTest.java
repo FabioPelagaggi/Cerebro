@@ -10,6 +10,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.infnet.model.HistoryModel;
+import com.infnet.model.HistoryRegistrationRequest;
+import com.infnet.repository.HistoryRepository;
+import com.infnet.service.HistoryService;
+
 @ExtendWith(MockitoExtension.class)
 public class HistoryServiceTest {
 

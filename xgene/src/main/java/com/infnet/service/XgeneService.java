@@ -1,9 +1,12 @@
-package com.infnet;
+package com.infnet.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+
+import com.infnet.model.XgeneCheckHistory;
+import com.infnet.repository.XgeneRepository;
 
 import lombok.AllArgsConstructor;
 
