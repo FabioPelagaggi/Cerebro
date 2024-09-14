@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.infnet.model.MutantModel;
 import com.infnet.model.ThreatNotificationModel;
+import com.infnet.producer.ThreatWarningProducer;
 
 import lombok.AllArgsConstructor;
 
@@ -15,6 +16,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ThreatService {
     private final RestTemplate restTemplate;
+    private final ThreatWarningProducer threatWarningProducer;
 
     public List<ThreatNotificationModel> checkThreats() {
         MutantModel[] allMutants = restTemplate.getForObject(
@@ -26,10 +28,16 @@ public class ThreatService {
         for (MutantModel mutant : allMutants) {
             int threatLevel = calcThreat(mutant);
 
-            threatReport.add(ThreatNotificationModel.builder()
+            ThreatNotificationModel threatNotificationModel = ThreatNotificationModel.builder()
                     .name(mutant.getName())
                     .threatLevel(threatLevel)
-                    .build());
+                    .build();
+
+            threatReport.add(threatNotificationModel);
+
+            if (threatLevel > 5) {
+                sendThreatWarning(threatNotificationModel);
+            }
         }
 
         return threatReport;
@@ -62,5 +70,13 @@ public class ThreatService {
         }
 
         return threatLevel;
+    }
+
+    private void sendThreatWarning(ThreatNotificationModel threatNotification) {
+        try {
+            threatWarningProducer.sendWarning(threatNotification);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
