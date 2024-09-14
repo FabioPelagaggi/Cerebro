@@ -29,6 +29,7 @@ public class ThreatService {
             int threatLevel = calcThreat(mutant);
 
             ThreatNotificationModel threatNotificationModel = ThreatNotificationModel.builder()
+                    .mutantId(mutant.getId())
                     .name(mutant.getName())
                     .threatLevel(threatLevel)
                     .build();
@@ -61,11 +62,11 @@ public class ThreatService {
     private int calcThreat(MutantModel mutant) {
         int threatLevel = mutant.getMutantPowers().length;
 
-        if (mutant.getLevel() == "Beta") {
+        if (mutant.getLevel().equalsIgnoreCase("Beta")) {
             threatLevel = threatLevel * 2;
-        } else if (mutant.getLevel() == "Alpha") {
+        } else if (mutant.getLevel().equalsIgnoreCase("Alpha")) {
             threatLevel = threatLevel * 3;
-        } else if (mutant.getLevel() == "Omega") {
+        } else if (mutant.getLevel().equalsIgnoreCase("Omega")) {
             threatLevel = threatLevel * 4;
         }
 

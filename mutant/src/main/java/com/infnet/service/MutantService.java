@@ -90,6 +90,14 @@ public class MutantService {
         restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, Void.class);
     }
 
+    public void updateThreat(Long id, boolean isThreat) {
+        MutantModel mutant = mutantRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
+
+        mutant.setThreat(isThreat);
+
+        mutantRepository.saveAndFlush(mutant);
+    }
+
     public List<MutantModel> getAllMutants() {
         return mutantRepository.findAll();
     }

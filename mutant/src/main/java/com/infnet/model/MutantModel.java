@@ -28,6 +28,7 @@ public class MutantModel {
     private String name;
     private String realName;
     private String level;
+    private boolean isThreat;
     private String[] mutantPowers;
     private String description;
     private String image;

@@ -11,10 +11,20 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ThreatNotificationModel {
+public class ThreatNotificationPayload {
 
     private Long mutantId;
     private String name;
     private int threatLevel;
+
+
+    @Override
+    public String toString() {
+        return "ThreatNotificationPayload{" +
+                "mutantId=" + mutantId +
+                ", name='" + name + '\'' +
+                ", threatLevel=" + threatLevel +
+                '}';
+    }
 
 }
