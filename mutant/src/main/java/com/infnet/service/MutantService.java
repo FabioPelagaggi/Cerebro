@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.infnet.exception.NotMutantException;
 import com.infnet.model.HistoryRegistrationRequest;
 import com.infnet.model.MutantModel;
 import com.infnet.model.MutantRegistrationRequest;
@@ -38,6 +39,7 @@ public class MutantService {
 
         if (!xgeneCheckResponse.isMutant()) {
             mutantRepository.delete(mutant);
+            throw new NotMutantException("Not a mutant");
         } else {
 
             HistoryRegistrationRequest historyRegistrationRequest = HistoryRegistrationRequest.builder()
