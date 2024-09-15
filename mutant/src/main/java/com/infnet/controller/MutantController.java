@@ -115,8 +115,8 @@ public class MutantController {
                             + "  \"image\": \"https://upload.wikimedia.org/wikipedia/en/e/e3/Wolverine_%28Marvel_Character%29.png\"\n"
                             + "}")) }),
             @ApiResponse(responseCode = "404", description = "Mutant not found", content = @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))),
-            @ApiResponse(responseCode = "500", description = "Internal server error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = String.class))) })
-
+            @ApiResponse(responseCode = "500", description = "Internal server error", content = @Content(mediaType = "application/json", schema = @Schema(implementation = String.class)))
+    })
     @PutMapping("{id}")
     public ResponseEntity<?> updateMutant(@PathVariable("id") Long id,
             @RequestBody MutantRegistrationRequest mutantRegistrationRequest) {

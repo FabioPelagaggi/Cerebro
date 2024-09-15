@@ -48,7 +48,12 @@ public class MutantService {
                     .registerType("CREATED")
                     .build();
 
-            restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, Void.class);
+            try {
+                restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, String.class);
+            } catch (Exception e) {
+                System.out.println("Error while registering mutant");
+                System.out.println(e.getMessage());
+            }
         }
 
     }
@@ -58,8 +63,9 @@ public class MutantService {
     }
 
     public void deleteMutant(Long id) {
-        MutantModel mutant = mutantRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
-        
+        MutantModel mutant = mutantRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
+
         mutantRepository.deleteById(id);
 
         HistoryRegistrationRequest historyRegistrationRequest = HistoryRegistrationRequest.builder()
@@ -67,12 +73,19 @@ public class MutantService {
                 .name(mutant.getName())
                 .registerType("DELETED")
                 .build();
-        
-        restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, Void.class);
+
+        try {
+            restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, String.class);
+        } catch (Exception e) {
+            System.out.println("Error while deleting mutant");
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void updateMutant(Long id, MutantRegistrationRequest request) {
-        MutantModel mutant = mutantRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
+        MutantModel mutant = mutantRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
 
         mutant.setName(request.name());
         mutant.setRealName(request.realName());
@@ -89,11 +102,18 @@ public class MutantService {
                 .registerType("UPDATED")
                 .build();
 
-        restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, Void.class);
+        try {
+            restTemplate.postForObject("http://HISTORY/api/histories", historyRegistrationRequest, String.class);
+        } catch (Exception e) {
+            System.out.println("Error while updating mutant");
+            System.out.println(e.getMessage());
+        }
+
     }
 
     public void updateThreat(Long id, boolean isThreat) {
-        MutantModel mutant = mutantRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
+        MutantModel mutant = mutantRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Mutant not found"));
 
         mutant.setThreat(isThreat);
 

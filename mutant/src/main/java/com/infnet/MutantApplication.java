@@ -6,12 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.info.Info;
 
+@EnableRabbit
 @SpringBootApplication
 @EnableDiscoveryClient 
-@EnableRabbit
-@OpenAPIDefinition(tags = { @Tag(name = "Mutant API", description = "API to register, update, delete and get mutants") })
+@OpenAPIDefinition(info = @Info(title = "Cerebro Mutant API", version = "1.0", description = "This API, checks if a given subject is a mutant and, if positive, saves the mutant in the Cerebro database."))
 public class MutantApplication {
     public static void main(String[] args) {
         SpringApplication.run(MutantApplication.class, args);

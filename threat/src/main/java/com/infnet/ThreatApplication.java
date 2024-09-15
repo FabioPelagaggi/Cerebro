@@ -8,8 +8,8 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Threat API", version = "1.0", description = "Threat API Information"))
 @EnableDiscoveryClient
+@OpenAPIDefinition(info = @Info(title = "Threat Level API", version = "1.0", description = "This API checks the threat level of mutants, and if found to be a threat, sends a notification."))
 public class ThreatApplication {
     public static void main(String[] args) {
         SpringApplication.run(ThreatApplication.class, args);

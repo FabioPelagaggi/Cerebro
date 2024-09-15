@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.ResponseEntity;
 
 import com.infnet.controller.XgeneController;
 import com.infnet.model.XgeneCheckResponse;
@@ -33,7 +34,8 @@ public class XgeneControllerTest {
 
         when(xgeneService.check(mutantId)).thenReturn(isMutant);
 
-        XgeneCheckResponse response = xgeneController.isMutant(mutantId);
+        ResponseEntity<XgeneCheckResponse> responseEntity = xgeneController.isMutant(mutantId);
+        XgeneCheckResponse response = responseEntity.getBody();
 
         assertEquals(isMutant, response.isMutant());
     }
