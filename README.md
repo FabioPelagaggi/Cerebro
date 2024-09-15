@@ -82,7 +82,7 @@ This project follows a Maven multi-module structure with the following modules:
 
 Before starting the project, ensure you have the following installed:
 - Java 17+
-- Maven 3.6+
+- Maven 3.3.3
 - Docker
 - RabbitMQ (Docker container will be used)
 - Swagger (already integrated in each service for API documentation)
