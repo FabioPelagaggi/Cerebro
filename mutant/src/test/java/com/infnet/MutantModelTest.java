@@ -16,6 +16,7 @@ public class MutantModelTest {
                 .name("Wolverine")
                 .realName("Logan")
                 .level("Omega")
+                .isThreat(false)
                 .mutantPowers(powers)
                 .description("A mutant with regenerative healing factor and retractable claws.")
                 .image("wolverine.png")
@@ -25,6 +26,7 @@ public class MutantModelTest {
         assertEquals("Wolverine", mutant.getName());
         assertEquals("Logan", mutant.getRealName());
         assertEquals("Omega", mutant.getLevel());
+        assertEquals(false, mutant.isThreat());
         assertArrayEquals(powers, mutant.getMutantPowers());
         assertEquals("A mutant with regenerative healing factor and retractable claws.", mutant.getDescription());
         assertEquals("wolverine.png", mutant.getImage());
@@ -39,6 +41,7 @@ public class MutantModelTest {
         mutant.setName("Magneto");
         mutant.setRealName("Erik Lehnsherr");
         mutant.setLevel("Alpha");
+        mutant.setThreat(true);
         mutant.setMutantPowers(powers);
         mutant.setDescription("A mutant with the ability to generate and control magnetic fields.");
         mutant.setImage("magneto.png");
@@ -47,6 +50,7 @@ public class MutantModelTest {
         assertEquals("Magneto", mutant.getName());
         assertEquals("Erik Lehnsherr", mutant.getRealName());
         assertEquals("Alpha", mutant.getLevel());
+        assertEquals(true, mutant.isThreat());
         assertArrayEquals(powers, mutant.getMutantPowers());
         assertEquals("A mutant with the ability to generate and control magnetic fields.", mutant.getDescription());
         assertEquals("magneto.png", mutant.getImage());
