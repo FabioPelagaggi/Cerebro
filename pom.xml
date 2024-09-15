@@ -49,7 +49,7 @@
 		<maven.compiler.target>17</maven.compiler.target>
 		<spring.boot.maven.plugin.version>3.3.3</spring.boot.maven.plugin.version>
 		<spring.boot.dependencies.version>3.3.3</spring.boot.dependencies.version>
-		<springdoc-openapi-ui.version>1.8.0</springdoc-openapi-ui.version>
+		<springdoc-openapi-ui.version>2.6.0</springdoc-openapi-ui.version>
 		<spring-cloud.version>2023.0.2</spring-cloud.version>
 	</properties>
 
@@ -74,7 +74,7 @@
 
 			<dependency>
 				<groupId>org.springdoc</groupId>
-				<artifactId>springdoc-openapi-ui</artifactId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 				<version>${springdoc-openapi-ui.version}</version>
 		</dependency>
 
