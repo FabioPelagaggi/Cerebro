@@ -1,11 +1,9 @@
-# Use a base image with Java installed
 FROM openjdk:17-jdk-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Java module JAR file to the container
-COPY target/threat-1.0-SNAPSHOT.jar /app/threat-1.0-SNAPSHOT.jar
+COPY target/threat-1.0-SNAPSHOT.jar /app/threat.jar
 
-# Run the Java module
-CMD ["java", "-jar", "threat-1.0-SNAPSHOT.jar"]
+EXPOSE 8088
+
+ENTRYPOINT ["java", "-jar", "threat.jar"]
